@@ -35,3 +35,7 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+#Ignore some WebStorm files
+.idea/watcherTasks.xml
+.idea/workspace.xml

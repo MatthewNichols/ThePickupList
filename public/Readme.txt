@@ -1,0 +1,1 @@
+UI is all HTML/JS/CSS, with no server-rendered UI. Client-side code goes here.
