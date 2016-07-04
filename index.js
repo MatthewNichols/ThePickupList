@@ -8,15 +8,10 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
-var router = express.Router();
-router.get('/', function(req, res) {
-    "use strict";
+//Configure API Routes
+require('./api/routes')(app);
 
-    res.json({ message: 'Hi'});
-});
-app.use('/api', router);
-
-
+//Set up Static files
 app.use(express.static('public'));
 
 app.listen(port);
