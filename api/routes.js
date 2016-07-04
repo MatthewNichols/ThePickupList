@@ -1,6 +1,6 @@
 
 //Configures / Handles API routes
-module.exports = function(app) {
+module.exports = (app) => {
     "use strict";
 
     //TODO: THis should probably switch with environment val of some type.
@@ -16,7 +16,7 @@ module.exports = function(app) {
     var express = require('express');
     var router = express.Router();
 
-    router.get('/', function(req, res) {
+    router.get('/', (req, res) => {
         "use strict";
 
         res.json({ message: 'Bye!!'});
@@ -24,12 +24,12 @@ module.exports = function(app) {
 
     router.route('/greetings')
 
-        .post(function (req, res) {
+        .post((req, res) => {
             var greeting = new Greeting();
             greeting.phrase = req.body.phrase;
             greeting.name = req.body.name;
 
-            greeting.save(function (err) {
+            greeting.save((err) => {
                 if (err) {
                     res.send(err);
                 }
@@ -38,7 +38,7 @@ module.exports = function(app) {
             })
         })
 
-        .get(function (req, res) {
+        .get((req, res) => {
             Greeting.find(function (err, greetings) {
                 if (err) {
                     res.send(err);
