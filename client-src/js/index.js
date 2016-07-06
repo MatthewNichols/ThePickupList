@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import Hello from './components/hello';
+import App from './components/app-component';
 
 require("../style/main.scss");
 
-let name = "Matthew";
-console.log(`Hi ${name}`);
-
-ReactDom.render(<Hello></Hello>, document.getElementById('appContainer'))
+ReactDom.render(
+    <App></App>,
+    document.getElementById('appContainer'))
