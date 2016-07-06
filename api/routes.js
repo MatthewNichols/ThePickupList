@@ -12,17 +12,16 @@ module.exports = (app) => {
     //Get Models
     var Greeting = require("./models/greeting");
 
-
     var express = require('express');
-    var router = express.Router();
 
-    router.get('/', (req, res) => {
+    var apiRouter = express.Router();
+    apiRouter.get('/', (req, res) => {
         "use strict";
 
         res.json({ message: 'Bye!!'});
     });
 
-    router.route('/greetings')
+    apiRouter.route('/greetings')
 
         .post((req, res) => {
             var greeting = new Greeting();
@@ -48,9 +47,12 @@ module.exports = (app) => {
             });
         });
 
+    app.use('/api', apiRouter);
 
-
-    app.use('/api', router);
-
+    app.use(function (req, res, next) {
+        // res.status(404);
+        // res.send("File not found");
+        res.sendFile(__dirname + '../public/index.html');
+    });
 
 }

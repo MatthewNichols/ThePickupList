@@ -13,7 +13,7 @@ module.exports = {
 
     devServer: {
         contentBase: 'public',
-
+        historyApiFallback: true,
         proxy: {
             '/api/*': 'http://localhost:8070/'
         }

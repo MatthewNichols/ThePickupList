@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import App from './components/app-component';
+import Routes from './routes';
 
 require("../style/main.scss");
 
 ReactDom.render(
-    <App></App>,
+    <Routes></Routes>,
     document.getElementById('appContainer'))
