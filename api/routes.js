@@ -10,7 +10,7 @@ module.exports = (app) => {
     mongoose.connect(config.mongoConnectionString);
 
     //Get Models
-    var Greeting = require("./models/greeting");
+    var List = require("./models/list-model");
 
     var express = require('express');
 
@@ -21,29 +21,28 @@ module.exports = (app) => {
         res.json({ message: 'Bye!!'});
     });
 
-    apiRouter.route('/greetings')
+    apiRouter.route('/lists')
 
         .post((req, res) => {
-            var greeting = new Greeting();
-            greeting.phrase = req.body.phrase;
-            greeting.name = req.body.name;
+            var list = new List();
+            list.name = req.body.name;
 
-            greeting.save((err) => {
+            list.save((err) => {
                 if (err) {
                     res.send(err);
                 }
 
-                res.json({ message: 'Greeting Created'});
+                res.json({ message: 'List Created'});
             })
         })
 
         .get((req, res) => {
-            Greeting.find(function (err, greetings) {
+            List.find(function (err, lists) {
                 if (err) {
                     res.send(err);
                 }
 
-                res.json(greetings);
+                res.json(lists);
             });
         });
 
