@@ -15,6 +15,7 @@ class ListEdit extends Component {
         e.preventDefault();
         console.log("saveClickHandler", this);
         this.props.addNewList(this.state.listName);
+        this.props.history.push('/');
     }
 
     cancelClickHandler(e) {
