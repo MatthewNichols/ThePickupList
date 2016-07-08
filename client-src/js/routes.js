@@ -11,8 +11,9 @@ import ListItemDetails from './components/list-item-details-component';
 export default (
     <Route path="/" component={App} >
         <IndexRoute component={Lists} />
-        <Route name="list" path="lists/:listId" component={List}></Route>
-        <Route name="list-edit"  path="lists/:listId/edit" component={ListEdit}></Route>
-        <Route name="list-detail"  path="lists/:listId/:itemId" component={ListItemDetails}></Route>
+        <Route path="lists/add" component={ListEdit}/>
+        <Route path="lists/:listId" component={List}/>
+        <Route path="lists/:listId/edit" component={ListEdit}/>
+        <Route path="lists/:listId/:itemId" component={ListItemDetails}/>
     </Route>
 );

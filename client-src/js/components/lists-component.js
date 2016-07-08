@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router'
 
 import ListsEntry from './lists-entry-component';
 import { fetchLists } from '../actions';
@@ -21,9 +22,15 @@ class Lists extends Component {
 
     render() {
         return (
-            <ul>
-                { this.renderLists() }
-            </ul>
+            <div>
+                <ul>
+                    { this.renderLists() }
+                </ul>
+
+                <div className="footer">
+                    <Link to="/lists/add">Add List</Link>
+                </div>
+            </div>
         );
     }
 }

@@ -7,6 +7,7 @@ export default function(props) {
     return (
         <li>
             <Link to={`/lists/${props.list._id}`}>{props.list.name}</Link>
+            &nbsp;
             <Link to={`/lists/${props.list._id}/edit`}>Edit</Link>
         </li>
     )

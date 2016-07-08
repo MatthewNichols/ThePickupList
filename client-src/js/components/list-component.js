@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 
-export default function () {
-    console.log('List');
+export default function (props) {
+    console.log('List', props);
     return (
         <div>
             <h3>List 1</h3>
