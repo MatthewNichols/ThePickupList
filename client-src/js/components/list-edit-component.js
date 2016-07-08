@@ -21,6 +21,7 @@ class ListEdit extends Component {
     cancelClickHandler(e) {
         e.preventDefault();
         console.log("cancelClickHandler");
+        this.props.history.push('/');
     }
 
     render() {
