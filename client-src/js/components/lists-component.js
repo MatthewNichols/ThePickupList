@@ -15,7 +15,7 @@ class Lists extends Component {
 
         console.log(lists);
         return lists.map((list) => (
-            <ListsEntry/>
+            <ListsEntry list={list} key={list._id}/>
         ));
     }
 

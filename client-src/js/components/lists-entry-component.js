@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router'
 
-export default function() {
+export default function(props) {
     "use strict";
-
+    console.log(props);
     return (
         <li>
-            <Link to="/lists/list1">List 1</Link>
-            <Link to="/lists/list1/edit">Edit</Link>
+            <Link to={`/lists/${props.list._id}`}>{props.list.name}</Link>
+            <Link to={`/lists/${props.list._id}/edit`}>Edit</Link>
         </li>
     )
 }
