@@ -22,6 +22,6 @@ An awesome shopping list app using the MERN (MongoDB/Express/React/Node) Stack, 
 ```
 - Client-side: In another command window run:
 ```
-  webpack-dev-server
+  webpack-dev-server -d
 ```
 - Site should be available at [http://localhost:8080](http://localhost:8080)
