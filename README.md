@@ -18,10 +18,10 @@ An awesome shopping list app using the MERN (MongoDB/Express/React/Node) Stack, 
 ```
 - API startup: In one command window run:
 ```
-  node index.js
+  npm run-script start-back
 ```
 - Client-side: In another command window run:
 ```
-  webpack-dev-server -d
+  npm run-script start-front
 ```
 - Site should be available at [http://localhost:8080](http://localhost:8080)
