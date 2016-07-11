@@ -14,6 +14,7 @@ export default (
         <Route path="lists/add" component={ListEdit}/>
         <Route path="lists/:listId" component={List}/>
         <Route path="lists/:listId/edit" component={ListEdit}/>
+        <Route path="lists/:listId/add-item" component={ListItemDetails}/>
         <Route path="lists/:listId/:itemId" component={ListItemDetails}/>
     </Route>
 );
