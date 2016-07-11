@@ -15,20 +15,16 @@ class ListEdit extends Component {
         e.preventDefault();
         console.log("saveClickHandler", this);
         this.props.addNewList(this.state.listName);
-        this.props.history.push('/');
+        this.context.router.push('/');
     }
 
     cancelClickHandler(e) {
         e.preventDefault();
-        console.log("cancelClickHandler");
-        this.props.history.push('/');
+        this.context.router.push('/');
     }
 
     render() {
-        //console.log('edit List', props);
-
         let screenTitle = this.props.params.listId ? "Edit List" : "Add new List";
-
 
         return (
             <div>
@@ -46,6 +42,10 @@ class ListEdit extends Component {
         )
     }
 }
+
+ListEdit.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 function mapDispatchToProps(dispatch) {
     "use strict";

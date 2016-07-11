@@ -12,9 +12,9 @@ class Lists extends Component {
 
     renderLists() {
        const lists = this.props.lists;
+
         if (lists == null) return;
 
-        console.log(lists);
         return lists.map((list) => (
             <ListsEntry list={list} key={list._id}/>
         ));
@@ -37,7 +37,6 @@ class Lists extends Component {
 
 
 function mapStateToProps(state) {
-    console.log(state);
     return { lists: state.lists };
 }
 

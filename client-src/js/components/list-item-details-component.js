@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 
-export default function () {
-    console.log('Item Details');
+export default function (props) {
     return (
         <div>
-            Item Details
+            <Link to={`/lists/${props.params.listId}`}>
+                &lt; List Name Here
+            </Link>
+            <div>
+                Item Details Here
+            </div>
         </div>
     )
 }

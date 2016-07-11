@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 
 export default function (props) {
-    console.log('List', props);
     return (
         <div>
-            <h3>List 1</h3>
+            <Link to="/">&lt; Lists</Link>
+            <h3>List Title</h3>
             <ul>
                 <li>
-                    <Link to="/lists/list1/item1">
-                        Item 1
+                    <Link to={`/lists/${props.params.listId}/item1`}>
+                        Fake Item
                     </Link>
                 </li>
             </ul>
